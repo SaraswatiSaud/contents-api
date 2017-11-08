@@ -1,3 +1,3 @@
 class Content < ApplicationRecord
-  validates_presence_of :url, :content
+  validates :url, :content, presence: true
 end
