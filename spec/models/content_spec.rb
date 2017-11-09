@@ -5,10 +5,23 @@ RSpec.describe Content, type: :model do
     expect(FactoryGirl.build(:content)).to be_valid
   end
 
+  before(:each) do
+    @content = FactoryGirl.build(:content)
+  end
+
+  it 'is valid with url and content' do
+    expect(@content).to be_valid
+  end
+
   it 'is invalid without url' do
-    content = FactoryGirl.build(:content, url: nil)
-    content.valid?
-    expect(content.errors[:url]).to include("can't be blank")
+    @content.url = nil
+    @content.valid?
+    expect(@content.errors[:url]).to include("can't be blank")
+  end
+
+  it 'should have a valid url' do
+    @content.url = 'http://google.com'
+    expect(@content).to be_valid
   end
 
   it 'is invalid without content' do
@@ -16,6 +29,4 @@ RSpec.describe Content, type: :model do
     content.valid?
     expect(content.errors[:content]).to include("can't be blank")
   end
-
-  
 end

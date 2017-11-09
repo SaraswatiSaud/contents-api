@@ -1,3 +1,4 @@
 class Content < ApplicationRecord
-  validates :url, :content, presence: true
+  validates :url, url: true, presence: true
+  validates :content, presence: true
 end
