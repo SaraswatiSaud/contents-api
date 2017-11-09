@@ -1,7 +1,9 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all
-    render json: @contents, status: :ok
+    if params[:page]
+      @contents = Content.all
+      render json: @contents, status: :ok
+    end
   end
 
   def create
