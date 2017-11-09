@@ -40,9 +40,9 @@ RSpec.describe ContentsController, type: :controller do
 
     context 'with invalid attributes' do
       it 'doesnot add a new content in the database' do
-        content_params = FactoryGirl.attributes_for(:content, :invalid)
+        content = FactoryGirl.attributes_for(:content, :invalid)
         expect {
-          post :create, params: { content: content_params }
+          post :create, params: { content: content }
         }.to_not change{ Content.count }
       end
     end
