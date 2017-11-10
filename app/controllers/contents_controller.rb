@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
   def index
     @contents = Content.page params[:page]
-    render json: { contents: @contents, total_page: @contents.total_pages, records: Content.count }
+    render json: { contents: @contents, per_page: @contents.limit_value, total_pages: @contents.total_pages, total_records: @contents.total_count }
   end
 
   def create
