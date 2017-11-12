@@ -1,24 +1,28 @@
-# README
+# contents-api
+This API allows you to scrape headings and links from webpages.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+1.	Clone the project
+2.	Run > bundle install
+3.	Run server > rails s
 
-Things you may want to cover:
+## Usage
+List Url: http://localhost:3000/contents, GET
 
-* Ruby version
+Scrape URL: http://localhost:3000/contents?url=[webpage-url] , POST
 
-* System dependencies
+## Dependencies
+Gems used are:
+*	rspec-rails – Testing framework
+*	factory_girl_rails – A fixture replacement
+*	database_cleaner
+*	rails_controller_testing
+*	nokogiri
+*	valid_url
+*	kaminari – Pagination for web app frameworks
 
-* Configuration
+## Tests
+This application is fully tested. Test is done using RSpec framework.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Questions, Feedback
+Feel free to message me on Github.
