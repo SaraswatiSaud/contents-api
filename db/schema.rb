@@ -14,7 +14,10 @@ ActiveRecord::Schema.define(version: 20171108081546) do
 
   create_table "contents", force: :cascade do |t|
     t.string "url"
-    t.text "content"
+    t.text "h1"
+    t.text "h2"
+    t.text "h3"
+    t.text "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
