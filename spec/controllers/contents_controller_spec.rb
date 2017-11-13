@@ -13,7 +13,7 @@ RSpec.describe ContentsController, type: :controller do
     end
 
     it 'shows a list of urls and their contents' do
-      content = FactoryGirl.create(:content)
+      content = FactoryBot.create(:content)
       get :index
       expect(assigns[:contents]).to eq([content])
     end
@@ -33,14 +33,14 @@ RSpec.describe ContentsController, type: :controller do
 
       it 'adds a new content in the database' do
         expect {
-          FactoryGirl.create(:content)
+          FactoryBot.create(:content)
         }.to change{ Content.count }.by(1)
       end
     end
 
     context 'with invalid attributes' do
       it 'doesnot add a new content in the database' do
-        content = FactoryGirl.attributes_for(:content, :invalid)
+        content = FactoryBot.attributes_for(:content, :invalid)
         expect {
           post :create, params: { content: content }
         }.to_not change{ Content.count }

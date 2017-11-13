@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Contents API', type: :request do
   describe 'GET /contents' do
-    let!(:contents) { FactoryGirl.create_list(:content, 10) }
+    let!(:contents) { FactoryBot.create_list(:content, 10) }
 
     before(:each) { get '/contents' }
 
@@ -18,7 +18,7 @@ RSpec.describe 'Contents API', type: :request do
   describe 'POST /contents' do
     it 'creates a content' do
       expect {
-        FactoryGirl.create(:content)
+        FactoryBot.create(:content)
         post '/contents'
       }.to change{ Content.count }.by(1)
       expect(response).to have_http_status(:success)
