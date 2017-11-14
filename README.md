@@ -4,17 +4,20 @@ This API allows you to scrape headings and links from webpages.
 ## Installation
 1.	Clone the project
 2.	Run > bundle install
-3.	Run server > rails s
+3.  Run > rails db:migrate
+4.	Run server > rails s
 
 ## Usage
 List Url: http://localhost:3000/contents, GET
 
 Scrape URL: http://localhost:3000/contents?url=[webpage-url] , POST
 
+Headings and Links are stored in array format.
+
 ## Dependencies
 Gems used are:
 *	rspec-rails – Testing framework
-*	factory_girl_rails – A fixture replacement
+*	factory_bot – A fixture replacement
 *	database_cleaner
 *	rails_controller_testing
 *	nokogiri
